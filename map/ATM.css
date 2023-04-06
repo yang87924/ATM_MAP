@@ -1,0 +1,25 @@
+.boxs {/*選單裡面*/
+    border: 1px solid #cccccc;
+    width: 300px;
+    /* background-color: #cccccc; */
+    width: 385px;
+    overflow: auto;
+}
+.box {/*選單外面*/
+    border: 1px solid #cccccc;
+    width: 385px;
+    height: 800px;
+    /* background-color: #cccccc; */
+
+    overflow: auto;
+}
+/*整個畫面排版*/
+.containers {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#map {
+    height: 800px;
+    max-width: 100%;
+}
