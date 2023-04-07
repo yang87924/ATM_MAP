@@ -12,7 +12,7 @@ fetch(areaUrl)
         const areaSelect = document.getElementById('area');
         const submitButton = document.getElementById('submit');
         const resultDiv = document.getElementById('result');
-
+        //111
         // 產生縣市選單
         data.forEach(item => {
             const countyOption = document.createElement('option');
