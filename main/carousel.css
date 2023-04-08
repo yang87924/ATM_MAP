@@ -1,0 +1,47 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.carousel-item {
+    height: 600px;
+    /* adjust the height as needed */
+}
+
+.carousel-item img {
+    max-height: 100%;
+    /* make the images fill the height of the carousel item */
+}
+.icon{
+   width: 200px;
+   height: 200px;
+}
+.how{
+    border: 1px solid black;
+    margin-top: 10px;
+    width: 1280px;
+    
+}
+.how p{
+  color: white;
+  background-color: orange;
+}
+.box {
+    display: flex;
+    transform: translateX(400%);
+
+    /*向右移動400%，若不寫預設為0*/
+    transition: transform 0.4s ease;
+  }
+
+  /*偶數號盒子*/
+  .box:nth-of-type(even) {
+    transform: translateX(-400%);
+  }
+
+  /*加入`class="show"`，到時候要利用這個class去控制box的顯示*/
+  .box.show {
+    transform: translateX(0);
+  }

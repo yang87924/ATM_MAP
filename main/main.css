@@ -1,13 +1,8 @@
-.image-container {
-    position: relative;
-  }
-  
-  .image-container ul {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-  }
-  
+    .floating-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+    /*top CSS*/

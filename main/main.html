@@ -1,36 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-</head>
-<body>
-  <div class="image-container">
-    <img src="https://cdn.ftvnews.com.tw/manasystem/FileData/News/44ecd1e1-985b-4292-a84c-6cbfc695df0c.jpg" alt="">
 
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-  </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="main.js"></script>
   
+  <link rel="stylesheet" href="./nvar.css">
+  <link rel="stylesheet" href="./carousel.css">
+  <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+  <!-- 卷軸-->
+  <div class="floating-button">
+    <img src="./img/Top.jpg" style="width: 50px; height: 50px;" alt="">
+  </div>
+  <div style=" display: flex;justify-content: center;">
+    <img
+      src="data:image/png;base64,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"
+      alt="logo" style="width: 50px ; height: 50px; ">
+    <nav class="navBar">
+      <div>
+        <ul>
+          <li><a href="https://6000.gov.tw/" target="_blank">6000官網</a></li>
+          <li><a href="#">新聞快訊</a></li>
+          <li class="dropdown">
+            
+            <a href="#" >領取資格</a>
+          </li>
+          <li><a href="#how">如何領</a></li>
+          <li><a href="#question">常見問題</a></li>
+          <li><a href="#play">玩樂推薦</a></li>
+          <li><a href="../map/ATM_MAP.html" target="_blank">ATM地圖</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="800">
+          <img src="./img/6000_1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="800">
+          <img src="./img/6000_2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="800">
+          <img src="./img/6000_3.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <br>
+  <div style=" margin: 0 100px;">
+    <h1>誰能領</h1>
+    <div>
+    </div>
+  </div>
+  <br>
+  <div style="margin-bottom: 10px; margin: 0 100px;">
+    <h1 id="how">如何領</h1>
+
+    <div class="box">
+      <div class="how ">
+        <div style="display:flex;">
+          <img src="./img/register.jpg" class="icon" alt="Image 1">
+          <div>
+            <div style="display:flex; margin-top: 10px;">
+              <h4>登記入帳</h4>
+              <p style="margin-left: 10px;">匯入金融帳戶</p>
+            </div>
+            <ul id="register">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="how">
+        <div style="display:flex;">
+          <img src="./img/ATM.jpg" class="icon" alt="Image 1">
+          <div>
+            <div style="display:flex; margin-top: 10px;">
+              <h4>ATM領現</h4>
+              <p style="margin-left: 10px;">ATM查詢</p>
+            </div>
+            <ul id="ATM">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="how">
+        <div style="display:flex;">
+          <img src="./img/post_office.jpg" class="icon" alt="Image 1">
+          <div>
+            <div style="display:flex; margin-top: 10px;">
+              <h4 >郵局領現</h4>
+              <p style="margin-left: 10px;">領取現金</p>
+            </div>
+            <ul id="post_office">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="how">
+        <div style="display:flex;">
+          <img src="./img/no_register.jpg" class="icon" alt="Image 1">
+          <div>
+            <div style="display:flex; margin-top: 10px;">
+              <h4>特定對象不須登記</h4>
+              <p style="margin-left: 10px;">領取現金</p>
+            </div>
+            <ul id="no_register">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     
+    <div class="box">
+      <div class="how">
+        <div style="display:flex;">
+          <img src="./img/Remote_areas.jpg" class="icon" alt="Image 1">
+          <div>
+            <div style="display:flex; margin-top: 10px;">
+              <h4>特定偏鄉民眾</h4>
+              <p style="margin-left: 10px;">領取現金</p>
+            </div>
+            <ul id="Remote_areas">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <div style=" margin: 0 100px;">
+    <h1 id="question">常見問題</h1>
+    <div>
+      <div >
+        <div class="Q1" style="display:flex; justify-content: space-between;">
+          <div>Q: 特定偏鄉的登記期間是什麼時候?</div>
+          <div style="align-self: flex-end;">▼</div>
+        </div>
+        
+    </div>
+      <p style="display:none;"  class="content1">A: 112/3/20-112/3/25</p>
+    </div>
+    <div>
+      <div class="Q2">Q: 未滿20歲可以自行領取嗎?</div>
+      <p style="display:none;" class="content2">A: 符合領取資格者都可以，若家中有未滿13歲的子女，父母或監護人可以代為其領，最多只能代領4位</p>
+    </div>
+  </div>
+  <div style="margin: 0 100px;">
+    <h1 id="play">6000元玩樂提案</h1>
+    <div>
+      <div>
+        <img src="./img/Remote_areas.jpg" alt="">
+        <h4>123</h4>
+        <h4 >456</h4>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
