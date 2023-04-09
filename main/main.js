@@ -5,7 +5,7 @@ fetch('main.json')
         datas=data;
         showdata();
     });
-
+//how
 function showdata(){
     const Remote_areas=document.getElementById('Remote_areas')
     const no_register=document.getElementById('no_register')
@@ -49,12 +49,30 @@ $(document).ready(function() {
       $('html, body').animate({scrollTop: 0}, 500);
     });
   });
+  //QA
 $(function(){
-  $('.Q1').click(function(){
-    $('.content1').slideToggle("slow");
+  $('.Q').click(function(){
+    $(this).parent().next().slideToggle('slow')
+    //alert($(this))
+    //$(this).parent().next().children().slideToggle("slow");
   })
-  $('.Q2').click(function(){
-    $('.content2').slideToggle("slow");
+  $('.Q').mouseenter(function(){
+    $('.Q').css("cursor", "pointer")
+    $('.Q').css('color', 'black')
+    $(this).css('color', 'red')
+  })
+//超連結
+  $("#mymap").click(function() {
+    window.location.href = "../map/ATM_MAP.html";
+  });
+  $('#mymap').mouseenter(function(){
+    $("#mymap").css("cursor", "pointer")
+  })
+  $("#my6000").click(function() {
+    window.location.href = "https://6000.gov.tw/Register/Index";
+  });
+  $('#my6000').mouseenter(function(){
+    $("#my6000").css("cursor", "pointer")
   })
 })
 
@@ -62,8 +80,8 @@ $(function(){
 window.onload=function(){
 
 let boxes = document.querySelectorAll('.box')
-let aa = document.querySelectorAll('.aa')
-console.log(aa)
+// let aa = document.querySelectorAll('.aa')
+// console.log(aa)
 
 window.addEventListener('scroll', checkBoxes)
 checkBoxes();
@@ -82,5 +100,5 @@ function checkBoxes() {
   })
 }
 
-  
+
 }
