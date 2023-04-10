@@ -1,18 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <script src="aa.js"></script> -->
+    <title>購物車</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+<script>
+    $(function () {
+        let cart = JSON.parse(localStorage.getItem('cart')) || {}
+        for (let productId in cart) {
+            let quantity = cart[productId]
+            $('#cart-items').append('<tr><td id="pid">商品 ' + productId + '</td><td id="pq">' + quantity + '</td><td><button class="remove-item">移除</button></td></tr>')
+        }
+
+        $('#go-to-home').click(function () {
+            window.history.back()
+        })
+
+        $('.remove-item').click(function () {
+            $(this).closest('tr').remove()
+            let updatedCart = {}
+            $('#cart-items tr').each(function () {
+                let productId = $(this).find('#pid').text().substring(3)
+                let quantity = $(this).find('#pq').text()
+                updatedCart[productId] = parseInt(quantity)
+
+            })
+            localStorage.setItem('cart', JSON.stringify(updatedCart))
+        })
+    })
+</script>
 
 <body>
-    <div class="bb"></div>
-    <script>
-        let aa = document.querySelectorAll('.bb')
-    console.log(aa)
-    </script>
+    <h1>購物車</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>商品名稱</th>
+                <th>數量</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+        </tbody>
+    </table>
+    <button id="go-to-home">回到上一頁</button>
 </body>
+
 </html>
