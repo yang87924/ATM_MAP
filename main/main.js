@@ -69,7 +69,8 @@ $(function(){
     $("#mymap").css("cursor", "pointer")
   })
   $("#my6000").click(function() {
-    window.location.href = "https://6000.gov.tw/Register/Index";
+    window.open("https://6000.gov.tw/Register/Index", "_blank");
+
   });
   $('#my6000').mouseenter(function(){
     $("#my6000").css("cursor", "pointer")

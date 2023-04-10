@@ -1,10 +1,10 @@
-const areaUrl = 'https://raw.githubusercontent.com/donma/TaiwanAddressCityAreaRoadChineseEnglishJSON/master/AllData.json';
 const bankUrl = 'https://raw.githubusercontent.com/yang87924/JsonDB/main/ATM.json';
 let selectdata = []
 let getdata = null
 let map = null
 let markers = []
 let totle=0
+const areaUrl = 'https://raw.githubusercontent.com/donma/TaiwanAddressCityAreaRoadChineseEnglishJSON/master/AllData.json';
 fetch(areaUrl)
     .then(response => response.json())
     .then(data => {

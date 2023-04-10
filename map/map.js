@@ -12,7 +12,7 @@ function geoLocation(latitude, longitude) {
     })
     const taiwan = { lat: 23.975126479012527, lng: 120.9795655805013 };
      map = new google.maps.Map($('#map').get(0), {
-        zoom: 7,
+        zoom: 8,
         center: taiwan,
         mapId: '1f5eee1a1fca909e'
     });
