@@ -1,3 +1,4 @@
+
 const bankUrl = 'https://raw.githubusercontent.com/yang87924/JsonDB/main/ATM.json';
 let selectdata = []
 let getdata = null
@@ -50,7 +51,7 @@ fetch(areaUrl)
                 //console.log(items)
                 if (items.所屬縣市 === selectedCounty && items.鄉鎮縣市別 === selectedArea) {
                     totle++
-                    if(totle<5){
+                    if(totle<10){
                     let newDiv = document.createElement("div");
                     newDiv.setAttribute("class", "boxs");
                     let bank_abbreviation = "所屬銀行簡稱:" + items.所屬銀行簡稱
@@ -58,7 +59,7 @@ fetch(areaUrl)
                     let contact_number = "聯絡電話:" + "(" + "0" + items.區碼 + ")" + items.聯絡電話
                     let address = items.所屬縣市 + items.鄉鎮縣市別 + items.地址
                     newDiv.innerHTML = bank_abbreviation + "<br>" + Installation_location + "<br>" + address + "<br>" + contact_number
-                    console.log(container.innerHTML)
+                    //console.log(container.innerHTML)
                     container.appendChild(newDiv);
                     //console.log(items)
                 }
@@ -69,7 +70,7 @@ fetch(areaUrl)
             addMarker()
         })
         function addMarker(){
-            selectdata.slice(0, 10).forEach(function (record) {
+            selectdata.forEach(function (record) {
                 const pinViewScaled = new google.maps.marker.PinView({
                     scale: 0.8,
                     //glyph: record.編號 ,
@@ -78,10 +79,15 @@ fetch(areaUrl)
                  const marker = new google.maps.marker.AdvancedMarkerView({
                     position: geoLocation(record["座標Y軸"], record["座標X軸"]),
                     map: map,
-                    //title: record.所屬縣市 ,
+                    title: record.所屬銀行簡稱 ,
                     //label: record.aqi,
                     content: pinViewScaled.element,
                 });
+                 //map.setCenter(record[0]["座標Y軸"], record[0]["座標X軸"]);
+                //map.setCenter(25.042074,121.532584);
+                //map.setCenter(25.04215504929246, 121.53251691085532);
+                //map.setZoom(15)
+                
                 markers.push(marker);
 
             })
