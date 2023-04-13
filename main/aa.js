@@ -12,7 +12,7 @@ window.onload=function(){
       let triggerBottom = window.innerHeight*0.8
       boxes.forEach(box => {
         const boxTop = box.getBoundingClientRect().top
-    
+    //
         if (boxTop < triggerBottom) {
           //console.log(1111)
           box.classList.add('show')
